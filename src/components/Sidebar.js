@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
 import { FaWallet } from "react-icons/fa";
-import { AiOutlinePieChart } from "react-icons/ai";
+import {AiFillBank, AiFillInfoCircle, AiOutlinePieChart} from "react-icons/ai";
 import { darkThemeColor } from "../utils";
 
 function Sidebar() {
@@ -21,6 +21,14 @@ function Sidebar() {
           <Link>
             <FaWallet />
             <h3>Liquidity</h3>
+          </Link>
+          <Link>
+            <AiFillBank />
+            <h3>Farm</h3>
+          </Link>
+          <Link>
+            <AiFillInfoCircle />
+            <h3>Info</h3>
           </Link>
           <Link>
             <AiOutlinePieChart />
@@ -52,31 +60,43 @@ const LinksContainer = styled.div`
   background-color: ${darkThemeColor};
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
 `;
 
 const Links = styled.ul`
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  padding-top: 2rem;
-  height: 60%;
+  //padding-top: 2rem;
+  //height: 60%;
   padding-left: 0;
 `;
 
 const Link = styled.li`
   margin-left: 25%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   gap: 1rem;
   align-items: center;
   color: #e4e4e4;
   cursor: pointer;
+  justify-content: flex-start;
+  
   h3 {
     font-weight: 300;
   }
   svg {
     font-size: 1.1rem;
-    margin-top: 3%;
   }
 `;
 

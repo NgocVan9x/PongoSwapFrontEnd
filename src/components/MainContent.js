@@ -14,40 +14,40 @@ function MainContent() {
       <SubContainer>
         <SectionOne>
           <ColumnOne1>
-            <Earnings />
+            {/*<Earnings />*/}
             <Info />
           </ColumnOne1>
-          <ColumnTwo1>
-            <TitleText>Your Projects</TitleText>
-            <Projects />
-          </ColumnTwo1>
+          {/*<ColumnTwo1>*/}
+          {/*  <TitleText>Your Projects</TitleText>*/}
+          {/*  <Projects />*/}
+          {/*</ColumnTwo1>*/}
         </SectionOne>
-        <SectionTwo>
-          <ColumnOne2>
-            <InvoiceContainer>
-              <TitleText>Recent Invoices</TitleText>
-              <Invoices />
-            </InvoiceContainer>
-            <JoinSlack />
-          </ColumnOne2>
-          <ColumnTwo2>
-            <TitleText>Recommended Project</TitleText>
-            <ProjectRecommendation />
-          </ColumnTwo2>
-        </SectionTwo>
-        <SectionTwo>
-          <ColumnOne2>
-            <InvoiceContainer>
-              <TitleText>Recent Invoices</TitleText>
-              <Invoices />
-            </InvoiceContainer>
-            <JoinSlack />
-          </ColumnOne2>
-          <ColumnTwo2>
-            <TitleText>Recommended Project</TitleText>
-            <ProjectRecommendation />
-          </ColumnTwo2>
-        </SectionTwo>
+        {/*<SectionTwo>*/}
+          {/*<ColumnOne2>*/}
+          {/*  <InvoiceContainer>*/}
+          {/*    <TitleText>Recent Invoices</TitleText>*/}
+          {/*    <Invoices />*/}
+          {/*  </InvoiceContainer>*/}
+          {/*  /!*<JoinSlack />*!/*/}
+          {/*</ColumnOne2>*/}
+          {/*<ColumnTwo2>*/}
+          {/*  <TitleText>Recommended Project</TitleText>*/}
+          {/*  <ProjectRecommendation />*/}
+          {/*</ColumnTwo2>*/}
+        {/*</SectionTwo>*/}
+        {/*<SectionTwo>*/}
+        {/*  <ColumnOne2>*/}
+        {/*    <InvoiceContainer>*/}
+        {/*      <TitleText>Recent Invoices</TitleText>*/}
+        {/*      <Invoices />*/}
+        {/*    </InvoiceContainer>*/}
+        {/*    <JoinSlack />*/}
+        {/*  </ColumnOne2>*/}
+        {/*  <ColumnTwo2>*/}
+        {/*    <TitleText>Recommended Project</TitleText>*/}
+        {/*    <ProjectRecommendation />*/}
+        {/*  </ColumnTwo2>*/}
+        {/*</SectionTwo>*/}
       </SubContainer>
     </Container>
   );
@@ -77,7 +77,7 @@ const SubContainer = styled.div`
 `;
 const SectionOne = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   height: 40%;
   gap: 2rem;
   width: 100%;
