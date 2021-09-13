@@ -60,6 +60,7 @@ const Links = styled.ul`
   flex-direction: column;
   padding-top: 2rem;
   height: 60%;
+  padding-left: 0;
 `;
 
 const Link = styled.li`
@@ -67,6 +68,7 @@ const Link = styled.li`
   margin-bottom: 2rem;
   display: flex;
   gap: 1rem;
+  align-items: center;
   color: #e4e4e4;
   cursor: pointer;
   h3 {

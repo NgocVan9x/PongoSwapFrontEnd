@@ -161,8 +161,8 @@ export const GlobalStyle = createGlobalStyle`
     --z-sem-page: 202;
     --z-popup-overlay: 204;
 
-    --w-side-bar: 340px;
-    --w-local-menu: 320px;
+    --w-side-bar: 200px;
+    --w-local-menu: 200px;
 
     /* easing */
     --easeOutQuint:   cubic-bezier(0.23,  1,     0.32,  1    );
