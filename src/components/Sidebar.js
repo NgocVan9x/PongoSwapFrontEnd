@@ -1,43 +1,56 @@
 import React from "react";
+import Link from 'next/link';
 import styled from "styled-components";
-import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
-import { FaWallet } from "react-icons/fa";
+import {RiFileCopyLine, RiHomeLine} from "react-icons/ri";
+import {FaWallet} from "react-icons/fa";
 import {AiFillBank, AiFillInfoCircle, AiOutlinePieChart} from "react-icons/ai";
-import { darkThemeColor } from "../utils";
+import {darkThemeColor} from "../utils";
 
 function Sidebar() {
-  return (
-    <Container>
-      <LinksContainer>
-        <Links>
-          <Link>
-            <RiHomeLine />
-            <h3>Home</h3>
-          </Link>
-          <Link>
-            <RiFileCopyLine />
-            <h3>Swap</h3>
-          </Link>
-          <Link>
-            <FaWallet />
-            <h3>Liquidity</h3>
-          </Link>
-          <Link>
-            <AiFillBank />
-            <h3>Farm</h3>
-          </Link>
-          <Link>
-            <AiFillInfoCircle />
-            <h3>Info</h3>
-          </Link>
-          <Link>
-            <AiOutlinePieChart />
-            <h3>Reports</h3>
-          </Link>
-        </Links>
-      </LinksContainer>
-    </Container>
-  );
+    return (
+        <Container>
+            <LinksContainer>
+                <Links>
+                    <Link href={'/'}>
+                        <ItemLink>
+                            <RiHomeLine/>
+                            <h3>Home</h3>
+                        </ItemLink>
+                    </Link>
+                    <Link href={'/swap'} as={'/swap'}>
+                        <ItemLink>
+                            <RiFileCopyLine/>
+                            <h3>Swap</h3>
+                        </ItemLink>
+                    </Link>
+                    <Link href={'/liquidity'} as={'/liquidity'}>
+                        <ItemLink>
+                            <FaWallet/>
+                            <h3>Liquidity</h3>
+                        </ItemLink>
+                    </Link>
+                    <Link href={'/farm'} as={'/farm'}>
+                        <ItemLink>
+                            <AiFillBank/>
+                            <h3>Farm</h3>
+                        </ItemLink>
+                    </Link>
+                    <Link href={'/info'} as={'/info'}>
+                        <ItemLink>
+                            <AiFillInfoCircle/>
+                            <h3>Info</h3>
+                        </ItemLink>
+                    </Link>
+                    <Link href={'/reports'} as={'/reports'}>
+                        <ItemLink>
+                            <AiOutlinePieChart/>
+                            <h3>Reports</h3>
+                        </ItemLink>
+                    </Link>
+                </Links>
+            </LinksContainer>
+        </Container>
+    );
 }
 
 const Container = styled.div`
@@ -65,6 +78,7 @@ const LinksContainer = styled.div`
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+
   ::-webkit-scrollbar {
     display: none;
     width: 0;
@@ -82,7 +96,7 @@ const Links = styled.ul`
   padding-left: 0;
 `;
 
-const Link = styled.li`
+const ItemLink = styled.a`
   margin-left: 25%;
   margin-bottom: 1rem;
   display: flex;
@@ -91,10 +105,11 @@ const Link = styled.li`
   color: #e4e4e4;
   cursor: pointer;
   justify-content: flex-start;
-  
+
   h3 {
     font-weight: 300;
   }
+
   svg {
     font-size: 1.1rem;
   }

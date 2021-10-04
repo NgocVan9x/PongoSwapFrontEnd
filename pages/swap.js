@@ -1,5 +1,5 @@
-import MainContent from "../src/components/MainContent";
+import SwapContent from "../src/components/SwapContent";
 
-export default function Home() {
-  return <MainContent />
+export default function Swap() {
+  return <SwapContent />
 }

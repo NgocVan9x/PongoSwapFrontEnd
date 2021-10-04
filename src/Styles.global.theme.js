@@ -4,14 +4,14 @@
 
 // font-family
 const fontFamily = {
-  CONDENSED: '"Barlow Condensed", sans-serif',
-  REGULAR: '"Poppins", sans-serif;',
-  SEMI: '"Barlow Semi Condensed", sans-serif'
+  CONDENSED: '"Montserrat Condensed", sans-serif',
+  REGULAR: '"Montserrat"',
+  SEMI: '"Montserrat Semi Condensed", sans-serif'
 };
 
 // color
 const color = {
-  BG_PRIMARY: 'linear-gradient(to bottom right,white 0%,#e6e4ff 70%)',
+  BG_PRIMARY: '#0F0F0F',
   BG_PRIMARY_TRANSPARENT: 'rgba(17, 17, 17, 0)',
   FG_PRIMARY: 'rgba(255, 255, 255, 0.87)'
 };

@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     --fg-400: rgba(255,255,255,.19);
 
     /* header */
-    --header-height: 64px;
+    --header-height: 79px;
     --header-bg: var(--bg-primary);
     /* --header-height-genre: 40px; */
     --header-height-genre: 0px;
