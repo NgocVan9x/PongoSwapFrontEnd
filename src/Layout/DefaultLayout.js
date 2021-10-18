@@ -24,10 +24,14 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   
+  @media (min-width: 1440px){
+    max-width: unset;
+  }
   @media (min-width: 1964px) {
     margin-left: auto;
     margin-right: auto;
   }
+  
 `;
 
 export default Layout

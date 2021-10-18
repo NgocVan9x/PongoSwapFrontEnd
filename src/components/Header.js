@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 import styled from "styled-components";
 import Link from 'next/link';
 import useAuth from "../lib/useAuth";
@@ -11,7 +11,7 @@ const Header = () => {
     const {login, logout} = useAuth()
     const {onPresentConnectModal, onPresentAccountModal} = useWalletModal(login, logout, account);
 
-    const renderRightMenus = () => {
+    const renderRightMenus = useCallback(() => {
         const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
         return (
             <RightWrapper>
@@ -19,7 +19,7 @@ const Header = () => {
                 {account && <BtnAccount onClick={onPresentAccountModal}><p>{accountEllipsis}</p></BtnAccount>}
             </RightWrapper>
         );
-    };
+    },[account]);
     return (
         <Wrapper
             id="header-revised"
@@ -30,14 +30,11 @@ const Header = () => {
                         <Logo/>
                     </a>
                 </Link>
-            </LeftWrapper>
-            <CenterWrapper>
                 <Link href={'/swap'} as={'/swap'}>
                     <ItemLink>
                         Swap
                     </ItemLink>
                 </Link>
-
                 <Link href={'/farm'} as={'/farm'}>
                     <ItemLink>
                         Farm
@@ -63,7 +60,10 @@ const Header = () => {
                         Liquidity Pool
                     </ItemLink>
                 </Link>
-            </CenterWrapper>
+            </LeftWrapper>
+            {/*<CenterWrapper>*/}
+            {/*   */}
+            {/*</CenterWrapper>*/}
             {renderRightMenus()}
         </Wrapper>
     );
@@ -76,8 +76,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
   height: var(--header-height);
   z-index: var(--z-header-revised);
   background: #0B0B0B;
@@ -94,6 +94,7 @@ const LeftWrapper = styled.div`
     display: block;
     overflow: hidden;
     width: 169px;
+    margin-right: 24px;
   }
 
   @media (min-width: 1100px) {
@@ -259,7 +260,7 @@ const BtnAccount = styled.button.attrs({
     border-radius:10px;
     padding: 2px;
     background: linear-gradient(
-            270deg,rgba(255,209,76,0.8) -9.33%,rgba(215,20,219,0.8) 49.9%,#361499 106.72%);
+            130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
     -webkit-mask:
             linear-gradient(#fff 0 0) content-box,
             linear-gradient(#fff 0 0);

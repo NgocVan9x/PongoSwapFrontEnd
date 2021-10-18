@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import TokenSwap from "./TokenSwap";
 
 function SwapContent() {
     return (
@@ -21,13 +22,21 @@ function SwapContent() {
                                     <BookMarkedIcon src="/static/icon/star-full-icon.svg"/>}
                             </RightHeader>
                         </HeaderSwap>
+                        <Swap>
+                            <TokenSwap title={"From"}></TokenSwap>
+                            <SwapToken>
+                                <BtnSwapToken><SwapTokenIcon src="/static/icon/swap-org.svg"/></BtnSwapToken>
+                            </SwapToken>
+                            <TokenSwap title={"To"}></TokenSwap>
+                        </Swap>
                     </SwapWrapper>
-                    <BtnSwap>
-                        Swap
-                    </BtnSwap>
-                    <DetailSwap>
-
-                    </DetailSwap>
+                    <SwapInfo>
+                        <BtnSwap>
+                            Swap
+                        </BtnSwap>
+                        <DetailSwap>
+                        </DetailSwap>
+                    </SwapInfo>
                 </ContainerSwap>
             </WrapperFirst>
             <BreakLine/>
@@ -50,13 +59,21 @@ function SwapContent() {
 }
 
 const Container = styled.div`
-  padding-top: 51px;
+  padding: 51px 24px 0px 24px;
 `;
 const WrapperFirst = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+  }
+  @media (min-width: 1024px) {
+    flex-wrap: nowrap;
+  }
 `
-const BreakLine =styled.div`
+const BreakLine = styled.div`
   margin: 70px 0;
   height: 3px;
   width: 100%;
@@ -91,36 +108,52 @@ const InfoWrapper = styled.div`
   padding: 20px;
 
   ::before {
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    border-radius:10px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
     padding: 1px;
-    background: linear-gradient(274.51deg, rgba(215, 20, 219, 0) -8.51%, #361499 100.64%);
-    -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
+    background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
   }
-  
+
 `;
 const ChartWrapper = styled.div`
   position: relative;
-  flex: 1 1 70%;
+  flex-basis: 100%;
   border: 1px solid red;
   min-height: 727px;
   grid-column-start: 1;
   grid-column-end: 3;
-  margin-right: 70px;
+  @media (min-width: 768px) {
+    flex-basis: 100%;
+  }
+  @media (min-width: 1024px) {
+    flex-basis: 65%;
+  }
+  @media (min-width: 1440px) {
+    flex-basis: 70%;
+  }
 `;
 
 const ContainerSwap = styled.div`
   min-height: 727px;
-  flex: 1 1 30%;
+  flex-basis: 100%;
+  @media (min-width: 768px) {
+    flex-basis: 100%;
+  }
+  @media (min-width: 1024px) {
+    flex-basis: 35%;
+  }
+  @media (min-width: 1440px) {
+    flex-basis: 30%;
+  }
 `
 
 const BookmarkWrapper = styled.div`
@@ -135,23 +168,22 @@ const BookMarkContent = styled.div`
 
   background: rgba(32, 31, 37, 0.34);
   border-radius: 10px;
-  
+
   border: 1px solid transparent;
   padding: 15px;
-  
+
   ::before {
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    border-radius:10px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
     padding: 1px;
-    background: linear-gradient(274.51deg, rgba(215, 20, 219, 0) -8.51%, #361499 100.64%);
-    -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
+    background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
   }
@@ -178,13 +210,15 @@ const SwapWrapper = styled.div`
     bottom: -2px;
     left: -2px;
     right: -2px;
-    background: linear-gradient(274.51deg, rgba(215, 20, 219, 0) -8.51%, #361499 100.64%);
+    background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%);
     content: '';
     z-index: -1;
     border-radius: 10px;
   }
 `;
-
+const SwapInfo = styled.div`
+  margin-left: 10px;
+`
 
 const BtnSwap = styled.button.attrs({
     type: 'button'
@@ -243,6 +277,41 @@ const HeaderSwap = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
+const Swap = styled.div`
+  margin-top: 21px;
+`
+const SwapToken = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px auto 0;
+`
+const BtnSwapToken = styled.button.attrs({
+    type: 'button'
+})`
+  outline: 0;
+  height: 34px;
+  width: 34px;
+  /* 01 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #E88F35;
+  backdrop-filter: blur(12px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 10px;
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+`;
+
+const SwapTokenIcon = styled.img`
+  width: 24px;
+  height: 24px;
+`;
+
 const TitleText = styled.div`
   font-family: Montserrat;
   font-style: normal;
@@ -285,7 +354,7 @@ const HeaderTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   padding: 10px 0;
 
   font-family: var(--ff-regular);
@@ -304,7 +373,7 @@ const HeaderTitle = styled.div`
   height: 40px;
   /* 01 */
   background: linear-gradient(274.51deg, rgba(215, 20, 219, 0) -8.51%, #361499 100.64%);
-  
+
   border-radius: 10px 10px 0px 0px;
   /* button-shadow */
 
